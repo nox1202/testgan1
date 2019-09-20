@@ -1,0 +1,6 @@
+$ git init 
+$ git remote add origin "repository address" 
+$ git add . 
+$ git status 
+$ git commit -m "message" 
+$ git push -u origin master
