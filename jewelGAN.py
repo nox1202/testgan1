@@ -25,9 +25,9 @@ def lrelu(x, n, leak=0.2):
 def process_data():   
     current_dir = os.getcwd()
     # parent = os.path.dirname(current_dir)
-    pokemon_dir = os.path.join(current_dir, 'data')
+    newJewel_dir = os.path.join(current_dir, 'data')
     images = []
-    for each in os.listdir(pokemon_dir):
+    for each in os.listdir(newJewel_dir):
         images.append(os.path.join(pokemon_dir,each))
     # print images    
     all_images = tf.convert_to_tensor(images, dtype = tf.string)
@@ -247,7 +247,7 @@ def train():
             imgtest = sess.run(fake_image, feed_dict={random_input: sample_noise, is_train: False})
             # imgtest = imgtest * 255.0
             # imgtest.astype(np.uint8)
-            save_images(imgtest, [8,8] ,newPoke_path + '/epoch' + str(i) + '.jpg')
+            save_images(imgtest, [8,8] ,newJewel_path + '/epoch' + str(i) + '.jpg')
             
             print('train:[%d],d_loss:%f,g_loss:%f' % (i, dLoss, gLoss))
     coord.request_stop()
